@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Chakra+Petch&display=swap"
+      rel="stylesheet"
+    />
+    <script src="functions.js"></script>
+  </head>
+  <body>
+    <header class="header-title">
+      ¡Bienvenidos/as a Guifos.com! ——————Donde los gifs están.////// Número de
+      visitas: 12.765.803
+    </header>
+    <div class="wrapper">
+      <nav class="navbar-container">
+        <div class="logo-container">
+          <img
+            class="logo"
+            src="gifOS_UI/gifOS_UI/assets/gifOF_logo.png"
+            alt="logo"
+          />
+          <img
+            class="logo2"
+            src="gifOS_UI/gifOS_UI/assets/gifOF_logo_dark.png"
+            alt="logo"
+          />
+        </div>
+        <div class="items-container">
+          <ul class="navbar-items">
+            <li class="items"><a>Crear Guifos</a></li>
+            <div class="dropdown-container">
+              <span class="items"><a>Elegir tema</a></span>
+              <img
+                src="gifOS_UI/gifOS_UI/assets/dropdown.svg"
+                alt="dropdown-arrow"
+              />
+            </div>
+            <li class="misGuifos-item"><a>Mis Guifos</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <div class="occult-items-dropdown">
+      <div class="item-dropdown">
+        <p class="day-theme-title">Sailor Day</p>
+      </div>
+      <div class="item-dropdown item-dropdown-2">
+        <p class="night-theme-title">Sailor Night</p>
+      </div>
+    </div>
+
+    <div class="wrapper">
+      <section class="buscador-section-container">
+        <div class="buscador-title-container">
+          <p class="buscador-title">Buscar</p>
+        </div>
+        <form class="buscador-container">
+          <input
+            class="buscador"
+            type="search"
+            id="buscador"
+            name="buscador"
+            placeholder="Busca gifs, hashtags, temas, busca lo que quieras…"
+          />
+          <button id="boton-buscador" class="buscador-button">
+            <img src="gifOS_UI/gifOS_UI/assets/lupa.svg" alt="buscar" />
+            <p id="texto-boton-buscador">Buscar</p>
+            <!--cambiar a span-->
+          </button>
+        </form>
+        <div id="sugerencias-busqueda-oculto" class="buscador-dropdown">
+          <div class="buscador-dropdown-item">
+            <p>Resultado de búsqueda sugerido</p>
+          </div>
+          <div class="buscador-dropdown-item">
+            <p>Un resultado similar de búsqueda</p>
+          </div>
+          <div class="buscador-dropdown-item">
+            <p>Y otro más</p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="wrapper">
+      <input id="textInput" />
+      <div id="contenedorGif"></div>
+    </div>
+
+    <!--<div class="wrapper">
+        <section class="sugerencias-container">
+            <div class="sugerencias-text-container">
+                <p>Hoy te sugerimos:</p>
+            </div>
+            <div class="sugerencias-gifs-container">
+                <div class="gif-container">
+                    <div class="gif-title-container">
+                        <p class="gif-title">Gif #1</p>
+                        <img src="gifOS_UI/gifOS_UI/assets/button close.svg" alt="close">
+                    </div>
+                    <div class="gif"></div>
+                    <button class="gif-button">
+                        <p>Ver más…</p>
+                    </button>
+                </div>
+                <div class="gif-container">
+                    <div class="gif-title-container">
+                        <p class="gif-title">Gif #2</p>
+                        <img src="gifOS_UI/gifOS_UI/assets/button close.svg" alt="close">
+                    </div>
+                    <div class="gif"></div>
+                    <button class="gif-button">
+                        <p>Ver más…</p>
+                    </button>
+                </div>
+                <div class="gif-container">
+                    <div class="gif-title-container">
+                        <p class="gif-title">Gif #3</p>
+                        <img src="gifOS_UI/gifOS_UI/assets/button close.svg" alt="close">
+                    </div>
+                    <div class="gif"></div>
+                    <button class="gif-button">
+                        <p>Ver más…</p>
+                    </button>
+                </div>
+                <div class="gif-container">
+                    <div class="gif-title-container">
+                        <p class="gif-title">Gif #4</p>
+                        <img src="gifOS_UI/gifOS_UI/assets/button close.svg" alt="close">
+                    </div>
+                    <div class="gif"></div>
+                    <button class="gif-button">
+                        <p>Ver más…</p>
+                    </button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="wrapper">
+        <section class="tendencias-section-container">
+            <div class="tendencias-title-container">
+                <p>Tendencias:</p>
+            </div>
+            <div class="tendencias-gifs-container">
+                <div class="gifs-row">
+                    <div class="gif-container"></div>
+                    <div class="gif-container"></div>
+                    <div class="gif-container"></div>
+                    <div class="gif-container"></div>
+                </div>
+                <div class="gifs-row">
+                    <div class="gif-container bigger-gif"></div>
+                    <div class="gif-container"></div>
+                    <div class="gif-container"></div>
+                </div>
+                <div class="gifs-row">
+                    <div class="gif-container"></div>
+                    <div class="gif-container"></div>
+                    <div class="gif-container"></div>
+                    <div class="gif-container"></div>
+                </div>
+            </div>
+        </section>
+    </div> -->
+    <!--<script src="functions.js"></script>-->
+    <script src="index2.js"></script>
+  </body>
+</html>
