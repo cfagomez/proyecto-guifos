@@ -1,8 +1,10 @@
 function processData(data) {
   data.data.map(function(e) {
-    const gif = e.images.original.url;
+    const gif = e.images.downsized.url;
     const img = document.createElement("IMG");
     img.setAttribute("src", gif);
+    img.setAttribute("width", "100%");
+    img.setAttribute("height", "300px");
     document.getElementById("contenedorGif").appendChild(img);
   });
 }
@@ -15,7 +17,7 @@ buttonSearch.addEventListener("click", function(event) {
 
   const apiKey = "cMm1tYzqFl0jlQ83RRs4q4MMVlT9kMDx";
   const search = inputValue;
-  const endpoint = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${search}&limit=3&rating=G&lang=en`;
+  const endpoint = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${search}&limit=12&rating=G&lang=en`;
 
   fetch(endpoint)
     .then(function(response) {
