@@ -8,7 +8,8 @@ function processData(data) {
 }
 
 const buttonSearch = document.getElementById("boton-buscador");
-buttonSearch.addEventListener("click", function() {
+buttonSearch.addEventListener("click", function(event) {
+  event.preventDefault();
   document.getElementById("contenedorGif").innerHTML = "";
   const inputValue = document.getElementById("buscador").value;
 

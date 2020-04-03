@@ -1,2 +1,3 @@
 # proyecto guifos
- pagina de gifs que consume api publica
+
+pagina de gifs que consume api publica.
