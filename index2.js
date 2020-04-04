@@ -14,6 +14,8 @@ buttonSearch.addEventListener("click", function(event) {
   event.preventDefault();
   document.getElementById("contenedorGif").innerHTML = "";
   const inputValue = document.getElementById("buscador").value;
+  const historialResults = document.createElement("SPAN");
+  document.getElementById("historialContainer").appendChild(historialResults);
 
   const apiKey = "cMm1tYzqFl0jlQ83RRs4q4MMVlT9kMDx";
   const search = inputValue;
@@ -29,5 +31,8 @@ buttonSearch.addEventListener("click", function(event) {
     .catch(function(error) {
       return error;
     });
-  document.getElementById("buscador").innerHTML = "";
+  document.getElementById("buscador").value = "";
+  document
+    .getElementById("textInput")
+    .setAttribute("placeholder", inputValue + " " + "(resultados)");
 });
