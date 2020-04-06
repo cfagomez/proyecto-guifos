@@ -50,7 +50,3 @@ buttonSearch.addEventListener("click", function (event) {
     .getElementById("textInput")
     .setAttribute("placeholder", inputValue + " " + "(resultados)");
 });
-
-//background: #4180F6;
-//border: 1px solid #4C2F99;
-//box-shadow: inset -2px -2px 0 0 #284F99, inset 2px 2px 0 0 #FFFFFF;
