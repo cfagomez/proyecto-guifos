@@ -106,6 +106,10 @@ body {
   padding: 10px;
 }
 
+.visible-items-dropdown {
+  display: block;
+}
+
 .item-dropdown {
   background: #fff4fd;
   border: 1px solid #cca6c9;
@@ -208,10 +212,6 @@ body {
   margin-top: 5px;
   margin-bottom: 5px;
   margin-left: 5px;
-}
-
-.buscador-button:active {
-  border: 1px dotted #110038;
 }
 
 .buscador-button img {
@@ -425,8 +425,4 @@ body {
   justify-content: space-between;
   width: 100%;
   margin-top: 20px;
-}
-
-.bigger-gif {
-  width: 48.4%;
 }
