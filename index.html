@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Guifos</title>
-    <link rel="stylesheet" href="style.css" />
+    <link id="theme" rel="stylesheet" href="style.css" />
     <link
       href="https://fonts.googleapis.com/css?family=Chakra+Petch&display=swap"
       rel="stylesheet"
@@ -29,21 +29,28 @@
           <ul class="navbar-items">
             <li class="items"><a>Crear Guifos</a></li>
             <div class="dropdown-container">
-              <!--<span class="items"><a>Elegir tema</a></span>
-              <img src="./gifOS_UI/assets/dropdown.svg" alt="dropdown-arrow" />
-            </div>-->
+              <span class="items"><a>Elegir tema</a></span>
+              <img
+                id="arrow"
+                ;
+                src="./gifOS_UI/assets/dropdown.svg"
+                ;
+                alt="dropdown-arrow"
+                ;
+              />
+            </div>
             <li class="misGuifos-item"><a>Mis Guifos</a></li>
           </ul>
         </div>
       </nav>
     </div>
 
-    <div class="occult-items-dropdown">
+    <div id="occult-items-dropdown" class="occult-items-dropdown">
       <div class="item-dropdown">
-        <p class="day-theme-title">Sailor Day</p>
+        <p id="lightTheme" class="day-theme-title">Sailor Day</p>
       </div>
       <div class="item-dropdown item-dropdown-2">
-        <p class="night-theme-title">Sailor Night</p>
+        <p id="darkTheme" class="night-theme-title">Sailor Night</p>
       </div>
     </div>
 
@@ -114,5 +121,7 @@
     <script type="text/javascript" src="index2.js"></script>
     <script type="text/javascript" src="sectionSuggestion.js"></script>
     <script type="text/javascript" src="sectionTrending.js"></script>
+    <script type="text/javascript" src="minorFunctions.js"></script>
+    <script type="text/javascript" src="darkTheme.js"></script>
   </body>
 </html>
