@@ -106,10 +106,6 @@ body {
   padding: 10px;
 }
 
-.visible-items-dropdown {
-  display: block;
-}
-
 .item-dropdown {
   background: #fff4fd;
   border: 1px solid #cca6c9;
