@@ -43,7 +43,14 @@ oBSuggestion.addEventListener("click", function () {
 //OPCIONES OCULTAS DE BUQUEDA
 
 const buscador = document.getElementById("buscador");
-buscador.addEventListener("input", function () {
-  document.getElementById("sugerencias-busqueda-oculto").style.display =
-    "block";
+const sugerenciasBusquedaOculto = document.getElementById(
+  "sugerencias-busqueda-oculto"
+);
+
+buscador.addEventListener("input", function (e) {
+  if (e.target.value.length === 0) {
+    sugerenciasBusquedaOculto.style.display = "none";
+  } else {
+    sugerenciasBusquedaOculto.style.display = "block";
+  }
 });
