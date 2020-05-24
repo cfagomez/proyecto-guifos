@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mis Gifos</title>
+    <link id="theme" rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Chakra+Petch&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="wrapper">
+      <nav class="navbar-container">
+        <div class="logo-container">
+          <img class="logo" src="./gifOS_UI/assets/gifOF_logo.png" alt="logo" />
+          <img
+            class="logo2"
+            src="./gifOS_UI/assets/gifOF_logo_dark.png"
+            alt="logo"
+          />
+        </div>
+        <div class="items-container">
+          <ul class="navbar-items">
+            <li class="items"><a>Crear Guifos</a></li>
+            <div class="dropdown-container">
+              <span class="items"><a>Elegir tema</a></span>
+              <img
+                id="arrow"
+                ;
+                src="./gifOS_UI/assets/dropdown.svg"
+                ;
+                alt="dropdown-arrow"
+                ;
+              />
+            </div>
+            <li class="misGuifos-item"><a>Mis Guifos</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <div class="wrapper">
+      <section class="sugerencias-container">
+        <div class="sugerencias-text-container">
+          <p>Mis Gifos</p>
+        </div>
+        <div
+          id="sugerencias-gifs-container"
+          class="sugerencias-gifs-container"
+        ></div>
+      </section>
+    </div>
+
+    <div class="wrapper">
+      <div id="contenedorGif" class="gifContainer"></div>
+    </div>
+
+    <script src="misGifosSect.js"></script>
+  </body>
+</html>
