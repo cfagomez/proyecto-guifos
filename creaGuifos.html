@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link id="theme" rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Chakra+Petch&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://www.WebRTC-Experiment.com/RecordRTC.js"></script>
+  </head>
+  <body>
+    <header class="header-title">
+      ¡Bienvenidos/as a Guifos.com! ——————Donde los gifs están.////// Número de
+      visitas: 12.765.803
+    </header>
+    <div class="wrapper">
+      <nav class="navbarContainerCrearGuifos">
+        <a href="index.html" class="backArrowContainer"
+          ><img class="backArrow" src="./gifOS_UI/assets/arrow.svg" alt="back"
+        /></a>
+        <img class="logo" src="./gifOS_UI/assets/gifOF_logo.png" alt="logo" />
+        <img
+          class="logo2"
+          src="./gifOS_UI/assets/gifOF_logo_dark.png"
+          alt="logo"
+        />
+      </nav>
+    </div>
+
+    <div id="crearGuifosWindow" class="crearGuifosWindow">
+        <span class="crearGuifosHeader">Crear Guifos</span>
+        <div class="crearGuifosTitleContainer">
+          <img src="gifOS_UI/assets/windowImg.png" />
+          <span class="crearGuifosTitle"
+            >Aquí podrás crear tus propios guifos</span
+          >
+        </div>
+        <span class="crearGuifosParagraph"
+          >Crear tu guifo es muy fácil, graba cualquier imagen con tu cámara y
+          obtén guifos personalizados. Los pasos para crear tu guifo son:</br>
+        </br>
+         1) Dar
+          permisos de acceso a la cámara (sólo por el tiempo de uso)</br>
+        </br>
+         2) Capturar tu momento guifo</br>
+        </br>
+         3) Revisar el momento</br> 
+        </br>
+         4) Listo para subir y compartir!</br>
+        </br>
+          ¿Quieres comenzar a crear tu guifo ahora?</br></span
+        >
+        <div class="crearGuifosButtonContainer">
+          <button class="cancelarButton">Cancelar</button>
+          <button id="comenzarButton" class="comenzarButton">Comenzar</button>
+        </div>
+      </div>
+      <div id="MisGuifosTitleContainer" class="MisGuifosTitleContainer">
+        <p>Mis Guifos:</p>
+      </div>
+
+      <!-- PRECAPTURA CONTAINER -->
+
+      <div id="precapturaContainer" class="precapturaContainer">
+        <div id="precapturaTitleContainer" class="precapturaTitleContainer">
+          <span id="precapturaTitle" class="precapturaTitle">Un Chequeo Antes de Empezar</span>
+          <img id="closePrecaptura" class="closePrecaptura" src="./gifOS_UI/assets/buttonClose.svg">
+        </div>
+        <video id="precaptura" class="precaptura"></video>
+        <div id="buttonContainer" class="buttonContainer">
+          <img id="cameraImg" class="cameraImg" src="./gifOS_UI/assets/camera.svg">
+          <button id="capturarButton" class="capturarButton">Capturar</button>
+        </div>
+      </div>
+
+      <div id="contenedorMisGuifos" class="contenedorMisGuifos"></div>
+      <script type="text/javascript" src="misGifosSect.js"></script>
+      <script type="text/javascript" src="precaptura.js"></script>
+  </body>
+</html>
