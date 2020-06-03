@@ -641,3 +641,23 @@ body {
   text-align: center;
   line-height: 18px;
 }
+
+.listoButton {
+  background: #ff6161;
+  border: 1px solid #110038;
+  box-shadow: inset -1px -1px 0 0 #993a3a, inset 1px 1px 0 0 #ffffff;
+
+  font-size: 16px;
+  color: #ffffff;
+  letter-spacing: 0;
+  text-align: center;
+  line-height: 18px;
+}
+
+.recordingImg {
+  padding: 10px 10px;
+
+  background: #ff6161;
+  border: 1px solid #110038;
+  box-shadow: inset -1px -1px 0 0 #993a3a, inset 1px 1px 0 0 #ffffff;
+}
