@@ -27,6 +27,54 @@ comenzarButton.addEventListener("click", function () {
       video.onloadedmetadata = function (e) {
         video.play();
       };
+      capturarButton.addEventListener("click", function () {
+        const recorder = RecordRTC(mediaStream, {
+          type: "gif",
+          frameRate: 1,
+          quality: 10,
+          width: 360,
+          hidden: 240,
+        });
+        recorder.startRecording();
+        capturarButton.innerHTML = "Listo";
+        capturarButton.setAttribute("class", "listoButton");
+        document
+          .getElementById("cameraImg")
+          .setAttribute("class", "recordingImg");
+        document.getElementById("cameraImg").src =
+          "./gifOS_UI/assets/recording.svg";
+      });
+      capturarButton.addEventListener("click", function () {
+        var horas = 0;
+        var minutos = 0;
+        var segundos = 0;
+        var centesimas = 0;
+
+        var h = document.getElementById("horas");
+        var m = document.getElementById("minutos");
+        var s = document.getElementById("segundos");
+        var c = document.getElementById("centesimas");
+
+        cronometro = setInterval(function () {
+          if (centesimas === 100) {
+            centesimas = 0;
+            segundos = segundos + 1;
+            s.innerHTML = segundos;
+            if (segundos === 60) {
+              segundos = 0;
+              minutos = minutos + 1;
+              m.innerHTML = minutos;
+            }
+            if (minutos === 60) {
+              minutos = 0;
+              horas = horas + 1;
+              h.innerHTML = horas;
+            }
+          }
+          centesimas = centesimas + 1;
+          c.innerHTML = centesimas;
+        }, 1);
+      });
     })
     .catch(function (err) {
       console.log(err.name + ": " + err.message);
@@ -42,13 +90,3 @@ closePrecaptura.addEventListener("click", function () {
 });
 
 const capturarButton = document.getElementById("capturarButton");
-capturarButton.addEventListener("click", function (stream) {
-  const recorder = RecordRTC(stream, {
-    type: "gif",
-    frameRate: 1,
-    quality: 10,
-    width: 360,
-    hidden: 240,
-  });
-  recorder.startRecording();
-});
