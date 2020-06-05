@@ -35,45 +35,29 @@ comenzarButton.addEventListener("click", function () {
           width: 360,
           hidden: 240,
         });
+
         recorder.startRecording();
-        capturarButton.innerHTML = "Listo";
-        capturarButton.setAttribute("class", "listoButton");
-        document
-          .getElementById("cameraImg")
-          .setAttribute("class", "recordingImg");
-        document.getElementById("cameraImg").src =
-          "./gifOS_UI/assets/recording.svg";
-      });
-      capturarButton.addEventListener("click", function () {
-        var horas = 0;
-        var minutos = 0;
-        var segundos = 0;
-        var centesimas = 0;
 
-        var h = document.getElementById("horas");
-        var m = document.getElementById("minutos");
-        var s = document.getElementById("segundos");
-        var c = document.getElementById("centesimas");
+        listoButton.addEventListener("click", function () {
+          recorder.stopRecording(function () {
+            const blob = recorder.blob;
+            const url = URL.createObjectURL(blob);
+            document.getElementById("precaptura").src = url;
+          });
+        });
 
-        cronometro = setInterval(function () {
-          if (centesimas === 100) {
-            centesimas = 0;
-            segundos = segundos + 1;
-            s.innerHTML = segundos;
-            if (segundos === 60) {
-              segundos = 0;
-              minutos = minutos + 1;
-              m.innerHTML = minutos;
-            }
-            if (minutos === 60) {
-              minutos = 0;
-              horas = horas + 1;
-              h.innerHTML = horas;
-            }
-          }
-          centesimas = centesimas + 1;
-          c.innerHTML = centesimas;
-        }, 1);
+        closePrecaptura.addEventListener("click", function () {
+          recorder.stopRecording();
+          capturarButton.style.display = "inline";
+          listoButton.style.display = "none";
+          document.getElementById("cameraImg").style.display = "inline";
+          document.getElementById("recordingImg").style.display = "none";
+        });
+
+        capturarButton.style.display = "none";
+        listoButton.style.display = "inline";
+        document.getElementById("cameraImg").style.display = "none";
+        document.getElementById("recordingImg").style.display = "inline";
       });
     })
     .catch(function (err) {
@@ -90,3 +74,29 @@ closePrecaptura.addEventListener("click", function () {
 });
 
 const capturarButton = document.getElementById("capturarButton");
+
+capturarButton.addEventListener("click", function () {
+  var segundos = 0;
+  var centesimas = 0;
+
+  var segundosSpan = document.getElementById("segundos");
+  var centesimasSpan = document.getElementById("centesimas");
+
+  setInterval(function () {
+    if (centesimas === 99) {
+      centesimas = 0;
+      segundos = segundos + 1;
+      if (segundos < 10) {
+        segundosSpan.innerHTML = "0" + segundos;
+      } else {
+        segundosSpan.innerHTML = segundos;
+      }
+    }
+    centesimas = centesimas + 1;
+    if (centesimas < 10) {
+      centesimasSpan.innerHTML = "0" + centesimas;
+    } else {
+      centesimasSpan.innerHTML = centesimas;
+    }
+  }, 10);
+});
