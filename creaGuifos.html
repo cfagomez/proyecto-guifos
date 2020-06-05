@@ -54,7 +54,7 @@
           ¿Quieres comenzar a crear tu guifo ahora?</br></span
         >
         <div class="crearGuifosButtonContainer">
-          <button class="cancelarButton">Cancelar</button>
+          <button id="cancelarButton" class="cancelarButton">Cancelar</button>
           <button id="comenzarButton" class="comenzarButton">Comenzar</button>
         </div>
       </div>
@@ -70,16 +70,22 @@
           <img id="closePrecaptura" class="closePrecaptura" src="./gifOS_UI/assets/buttonClose.svg">
         </div>
         <video id="precaptura" class="precaptura"></video>
-        <div id="buttonContainer" class="buttonContainer">
-          <img id="cameraImg" class="cameraImg" src="./gifOS_UI/assets/camera.svg">
-          <button id="capturarButton" class="capturarButton">Capturar</button>
+        <div id="footer" class="footer">
           <div id="cronometro" class="cronometro">
-            <span id="horas">00:</span>
-            <span id="minutos">00:</span>
-            <span id="segundos">00:</span>
-            <span id="centesimas">00</span>
+            <span class="horas">00</span>
+            <span>:</span>
+            <span>00</span>
+            <span>:</span>
+            <span id="segundos">00</span>
+            <span>:</span>
+            <span id="centesimas" class="centesimas">00</span>
           </div>
-        </div>
+          <div id="buttonContainer" class="buttonContainer">
+          <img id="cameraImg" class="cameraImg" src="./gifOS_UI/assets/camera.svg">
+          <img id="recordingImg" class="recordingImg" src="./gifOS_UI/assets/recording.svg">
+          <button id="capturarButton" class="capturarButton">Capturar</button>
+          <button id="listoButton" class="listoButton">Listo</button>
+        </div>  
       </div>
 
       <div id="contenedorMisGuifos" class="contenedorMisGuifos"></div>
