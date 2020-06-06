@@ -29,7 +29,6 @@ body {
 /*=====NAVBAR=====*/
 
 .navbar-container {
-  position: relative;
   padding-top: 19px;
   position: relative;
   display: flex;
@@ -118,27 +117,11 @@ body {
   transform: translateY(-15px);
 
   margin-top: 0px;
-  margin-left: 984.5px;
-  padding: 12.5px;
+  margin-left: 976px;
+  padding: 11.5px;
 
   z-index: 1;
 }
-
-/*.occult-items-dropdown-misGifosSect {
-  position: absolute;
-  display: none;
-
-  background: #e6e6e6;
-  box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
-
-  transform: translateY(-15px);
-
-  margin-top: 0px;
-  margin-left: 975.5px;
-  padding: 12.5px;
-
-  z-index: 1;
-}*/
 
 .item-dropdown {
   background: #fff4fd;
