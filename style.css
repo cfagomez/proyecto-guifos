@@ -43,6 +43,10 @@ body {
   justify-content: flex-start;
 }
 
+.logo-container a {
+  align-self: center;
+}
+
 .logo2 {
   display: none;
 }
@@ -88,6 +92,7 @@ body {
 
 .misGuifos-item a {
   text-align: start;
+  color: #110038;
 }
 
 .misGuifos-item:hover {
@@ -118,6 +123,22 @@ body {
 
   z-index: 1;
 }
+
+/*.occult-items-dropdown-misGifosSect {
+  position: absolute;
+  display: none;
+
+  background: #e6e6e6;
+  box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
+
+  transform: translateY(-15px);
+
+  margin-top: 0px;
+  margin-left: 975.5px;
+  padding: 12.5px;
+
+  z-index: 1;
+}*/
 
 .item-dropdown {
   background: #fff4fd;
@@ -703,4 +724,37 @@ body {
   background: #ff6161;
   border: 1px solid #110038;
   box-shadow: inset -1px -1px 0 0 #993a3a, inset 1px 1px 0 0 #ffffff;
+}
+
+/*====MIS GIFOS SECTION=====*/
+
+.misGifosContainer {
+  display: block;
+  margin-top: 64px;
+}
+
+.misGifosTextContainer {
+  background-color: #fffafe;
+  border: 1px solid #e6bbe2;
+  box-shadow: inset -2px -2px 0 0 #e6dce4, inset 2px 2px 0 0 #80687d;
+
+  margin-bottom: 15px;
+}
+
+.misGifosTextContainer p {
+  font-size: 14px;
+  color: #110038;
+  letter-spacing: 0;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  margin-left: 9px;
+}
+
+.misGifosGifsContainer {
+  margin-top: 20px;
+  display: grid;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  grid-template-columns: auto auto auto auto;
+  justify-content: space-between;
 }
