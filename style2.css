@@ -43,6 +43,10 @@ body {
   justify-content: flex-start;
 }
 
+.logo-container a {
+  align-self: center;
+}
+
 .logo {
   display: none;
 }
@@ -447,4 +451,37 @@ body {
   justify-content: space-between;
   width: 100%;
   margin-top: 20px;
+}
+
+/*====MIS GIFOS SECTION=====*/
+
+.misGifosContainer {
+  display: block;
+  margin-top: 64px;
+}
+
+.misGifosTextContainer {
+  background-color: #fffafe;
+  border: 1px solid #e6bbe2;
+  box-shadow: inset -2px -2px 0 0 #e6dce4, inset 2px 2px 0 0 #80687d;
+
+  margin-bottom: 15px;
+}
+
+.misGifosTextContainer p {
+  font-size: 14px;
+  color: #110038;
+  letter-spacing: 0;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  margin-left: 9px;
+}
+
+.misGifosGifsContainer {
+  margin-top: 20px;
+  display: grid;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  grid-template-columns: auto auto auto auto;
+  justify-content: space-between;
 }
