@@ -62,9 +62,11 @@ body {
 
 .items {
   list-style: none;
+
   background: #f7c9f3;
   border: 1px solid #110038;
   box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
+
   margin-left: 16px;
   padding: 9px 26.5px;
 }
@@ -81,11 +83,13 @@ body {
 
 .misGuifos-item {
   list-style: none;
+
   padding-top: 9px;
   padding-bottom: 9px;
   padding-right: 8px;
   padding-left: 8px;
   margin-left: 8px;
+
   border: 1px solid #ffffff;
 }
 
@@ -173,8 +177,11 @@ body {
   position: relative;
   display: flex;
   flex-direction: column;
+
   box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
+
   margin-top: 20px;
+
   z-index: 0;
 }
 
@@ -183,9 +190,11 @@ body {
 }
 
 .buscador-title {
-  margin-top: 2px;
+  margin-right: 4px;
+  margin-top: 4px;
   margin-bottom: 2px;
-  margin-left: 3px;
+  margin-left: 4px;
+
   font-size: 14px;
   color: #ffffff;
   letter-spacing: 0;
@@ -194,21 +203,26 @@ body {
 .buscador-container {
   display: flex;
   justify-content: space-between;
+
   padding-bottom: 12px;
   padding-top: 12px;
   padding-left: 15px;
   padding-right: 18px;
+
   background-color: #e6e6e6;
 }
 
 .buscador {
   width: 1025px;
   height: 48px;
+
   padding-left: 16px;
+
   font-size: 16px;
   color: #b4b4b4;
   letter-spacing: 0;
   line-height: 22px;
+
   border: 1px solid #979797;
   box-shadow: inset -2px -2px 0 0 #e6e6e6, inset 2px 2px 0 0 #000000;
 }
@@ -235,10 +249,12 @@ body {
 
 .buscador-button span {
   margin-right: 14px;
+
   font-size: 16px;
   color: #b4b4b4;
   letter-spacing: 0;
   line-height: 18px;
+
   margin-top: 0px;
   margin-bottom: 0px;
   margin-left: 15px;
@@ -307,6 +323,9 @@ body {
 }
 
 .crearGuifosHeader {
+  margin-left: 4px;
+  margin-top: 4px;
+  margin-right: 4px;
   padding-left: 4px;
   padding-top: 3.5px;
   padding-bottom: 2.5px;
