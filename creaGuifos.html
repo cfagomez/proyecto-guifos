@@ -12,23 +12,24 @@
     <script src="https://www.WebRTC-Experiment.com/RecordRTC.js"></script>
   </head>
   <body>
+
+    <!--HEADER-->
+
     <header class="header-title">
       ¡Bienvenidos/as a Guifos.com! ——————Donde los gifs están.////// Número de
       visitas: 12.765.803
     </header>
+
+    <!--NAVBAR-->
+
     <div class="wrapper">
       <nav class="navbarContainerCrearGuifos">
-        <a href="index.html" class="backArrowContainer"
-          ><img class="backArrow" src="./gifOS_UI/assets/arrow.svg" alt="back"
-        /></a>
-        <img class="logo" src="./gifOS_UI/assets/gifOF_logo.png" alt="logo" />
-        <img
-          class="logo2"
-          src="./gifOS_UI/assets/gifOF_logo_dark.png"
-          alt="logo"
-        />
+        <img id="backArrow" class="backArrow" src="./gifOS_UI/assets/arrow.svg" alt="back"/>
+        <a href="index.html"><img class="logo" src="./gifOS_UI/assets/gifOF_logo.png" alt="logo" /></a>
       </nav>
     </div>
+
+    <!--CREAR GIFOS WINDOW-->
 
     <div id="crearGuifosWindow" class="crearGuifosWindow">
         <span class="crearGuifosHeader">Crear Guifos</span>
@@ -57,11 +58,18 @@
           <button id="cancelarButton" class="cancelarButton">Cancelar</button>
           <button id="comenzarButton" class="comenzarButton">Comenzar</button>
         </div>
-      </div>
+    </div>
+
+    <!--MIS GIFOS SECTION-->
+
+    <div id="wrapperMisGifosSection" class="wrapper">
       <div id="MisGuifosTitleContainer" class="MisGuifosTitleContainer">
         <p>Mis Guifos:</p>
       </div>
-
+      <div class="wrapper">
+        <div id="misGifosGifsContainer" class="misGifosGifsContainer"></div>
+      </div>
+    </div>
       <!-- PRECAPTURA CONTAINER -->
 
       <div id="precapturaContainer" class="precapturaContainer">
@@ -87,9 +95,9 @@
           <button id="listoButton" class="listoButton">Listo</button>
         </div>  
       </div>
-
-      <div id="contenedorMisGuifos" class="contenedorMisGuifos"></div>
-      <script type="text/javascript" src="misGifosSect.js"></script>
+      
+      <script type="text/javascript" src="crearGuifosSect.js"></script>
+      <!--<script type="text/javascript" src="misGifosSect.js"></script>-->
       <script type="text/javascript" src="precaptura.js"></script>
   </body>
 </html>
