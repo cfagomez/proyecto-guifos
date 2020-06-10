@@ -178,6 +178,7 @@ body {
   display: flex;
   flex-direction: column;
 
+  background: #e6e6e6;
   box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
 
   margin-top: 20px;
@@ -187,6 +188,9 @@ body {
 
 .buscador-title-container {
   background-image: linear-gradient(270deg, #f7c9f3 0%, #4180f6 100%);
+
+  margin-top: 3px;
+  margin-right: 3px;
 }
 
 .buscador-title {
@@ -208,6 +212,9 @@ body {
   padding-top: 12px;
   padding-left: 15px;
   padding-right: 18px;
+
+  margin-bottom: 3px;
+  margin-right: 3px;
 
   background-color: #e6e6e6;
 }
@@ -244,7 +251,6 @@ body {
 .buscador-button img {
   padding-left: 10px;
   width: 28px;
-  color: #b4b4b4;
 }
 
 .buscador-button span {
@@ -489,6 +495,7 @@ body {
 
 .sugerencias-gifs-container {
   margin-top: 20px;
+
   display: grid;
   grid-column-gap: 20px;
   grid-row-gap: 20px;
@@ -499,6 +506,7 @@ body {
 .gif-container {
   display: flex;
   flex-direction: column;
+
   box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
 }
 
@@ -506,14 +514,19 @@ body {
   display: flex;
   justify-content: space-between;
   flex-direction: row;
+
   background-image: linear-gradient(270deg, #f7c9f3 0%, #4180f6 100%);
+
   font-size: 14px;
   color: #ffffff;
   letter-spacing: 0;
+
   padding-top: 3px;
   padding-bottom: 3px;
   padding-left: 3px;
-  margin: 0px;
+  margin-right: 3px;
+  margin-top: 3px;
+  margin-bottom: 2px;
 }
 
 .gif {
@@ -531,8 +544,11 @@ body {
 }
 
 .gif-img {
-  width: 100%;
+  width: 245px;
   height: 250px;
+
+  margin-bottom: 3px;
+  margin-right: 3px;
 }
 
 .gif-button {
