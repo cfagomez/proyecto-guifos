@@ -28,21 +28,25 @@ const bABSuggestion = document.getElementById("bABSuggestion");
 bABSuggestion.addEventListener("click", function () {
   document.getElementById("buscador").placeholder = "";
   document.getElementById("buscador").value = "Beavis and Butthead";
+  document.getElementById("sugerencias-busqueda-oculto").style.display = "none";
 });
 const iMSuggestion = document.getElementById("iMSuggestion");
 iMSuggestion.addEventListener("click", function () {
   document.getElementById("buscador").placeholder = "";
   document.getElementById("buscador").value = "Inigo Montoya";
+  document.getElementById("sugerencias-busqueda-oculto").style.display = "none";
 });
 const oBSuggestion = document.getElementById("oBSuggestion");
 oBSuggestion.addEventListener("click", function () {
   document.getElementById("buscador").placeholder = "";
   document.getElementById("buscador").value = "Oldboy";
+  document.getElementById("sugerencias-busqueda-oculto").style.display = "none";
 });
 
 //OPCIONES OCULTAS DE BUQUEDA
 
 const buscador = document.getElementById("buscador");
+
 const sugerenciasBusquedaOculto = document.getElementById(
   "sugerencias-busqueda-oculto"
 );
@@ -50,7 +54,14 @@ const sugerenciasBusquedaOculto = document.getElementById(
 buscador.addEventListener("input", function (e) {
   if (e.target.value.length === 0) {
     sugerenciasBusquedaOculto.style.display = "none";
+    document.getElementById("lupaBuscador").src =
+      "./gifOS_UI/assets/lupa_inactive.svg";
+    document.getElementById("boton-buscador").style.background = "#E6E6E6";
+    document.getElementById("texto-boton-buscador").style.color = "#B4B4B4";
   } else {
     sugerenciasBusquedaOculto.style.display = "block";
+    document.getElementById("lupaBuscador").src = "./gifOS_UI/assets/lupa.svg";
+    document.getElementById("boton-buscador").style.background = "#F7C9F3";
+    document.getElementById("texto-boton-buscador").style.color = "#110038";
   }
 });
