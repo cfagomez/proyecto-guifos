@@ -74,7 +74,7 @@
     <!--BUSCADOR-->
 
     <div class="wrapper">
-      <section id="buscadorSectionContainer" class="buscador-section-container">
+      <div id="buscadorSectionContainer" class="buscador-section-container">
         <div class="buscador-title-container">
           <p class="buscador-title">Buscar</p>
         </div>
@@ -87,8 +87,14 @@
             placeholder="Busca gifs, hashtags, temas, busca lo que quieras…"
           />
           <button id="boton-buscador" class="buscador-button">
-            <img src="./gifOS_UI/assets/lupa.svg" alt="buscar" />
-            <span id="texto-boton-buscador">Buscar</span>
+            <img
+              id="lupaBuscador"
+              src="./gifOS_UI/assets/lupa_inactive.svg"
+              alt="buscar"
+            />
+            <span class="texto-boton-buscador" id="texto-boton-buscador"
+              >Buscar</span
+            >
           </button>
         </form>
         <div id="sugerencias-busqueda-oculto" class="buscador-dropdown">
@@ -102,7 +108,7 @@
             <p>Oldboy ---></p>
           </div>
         </div>
-      </section>
+      </div>
     </div>
 
     <!--RESULTADOS BUSQUEDA-->
