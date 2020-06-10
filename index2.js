@@ -30,6 +30,11 @@ buttonSearch.addEventListener("click", function (event) {
   historialResults.innerHTML = inputValue;
   document.getElementById("resultsSection").style.display = "block";
   document.getElementById("historialContainer").appendChild(historialResults);
+  document.getElementById("sugerencias-busqueda-oculto").style.display = "none";
+  document.getElementById("lupaBuscador").src =
+    "./gifOS_UI/assets/lupa_inactive.svg";
+  document.getElementById("boton-buscador").style.background = "#E6E6E6";
+  document.getElementById("texto-boton-buscador").style.color = "#B4B4B4";
 
   const apiKey = "cMm1tYzqFl0jlQ83RRs4q4MMVlT9kMDx";
   const search = inputValue;
