@@ -10,10 +10,12 @@ function procesarData(data) {
     span.innerHTML = `#${res[0]}`;
     textoBusqueda = span.innerHTML;
     div.appendChild(span);
+    const closeImg = document.createElement("IMG");
+    closeImg.setAttribute("src", "./gifOS_UI/assets/close.svg");
+    span.appendChild(closeImg);
     const gif = e.images.downsized.url;
     const img = document.createElement("IMG");
     img.setAttribute("src", gif);
-    img.setAttribute("width", "100%");
     img.setAttribute("class", "gif-img");
     div.appendChild(img);
     const button = document.createElement("BUTTON");
