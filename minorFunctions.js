@@ -56,12 +56,14 @@ buscador.addEventListener("input", function (e) {
     sugerenciasBusquedaOculto.style.display = "none";
     document.getElementById("lupaBuscador").src =
       "./gifOS_UI/assets/lupa_inactive.svg";
-    document.getElementById("boton-buscador").style.background = "#E6E6E6";
-    document.getElementById("texto-boton-buscador").style.color = "#B4B4B4";
+    document
+      .getElementById("boton-buscador")
+      .setAttribute("class", "buscador-button");
   } else {
     sugerenciasBusquedaOculto.style.display = "block";
     document.getElementById("lupaBuscador").src = "./gifOS_UI/assets/lupa.svg";
-    document.getElementById("boton-buscador").style.background = "#F7C9F3";
-    document.getElementById("texto-boton-buscador").style.color = "#110038";
+    document
+      .getElementById("boton-buscador")
+      .setAttribute("class", "buscador-button-active");
   }
 });
