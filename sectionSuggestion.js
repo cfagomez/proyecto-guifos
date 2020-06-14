@@ -1,5 +1,4 @@
 function processDataSuggestion(data) {
-  debugger;
   data.data.map(function (e) {
     const gif = e.images.downsized.url;
     const img = document.createElement("IMG");
@@ -39,16 +38,21 @@ function procesarData(data) {
     const button = document.createElement("BUTTON");
     button.setAttribute("class", "gif-button");
     button.setAttribute("id", "btnVerMas");
+    button.addEventListener("click", function () {
+      location.href = "#textInput";
+    });
     div.appendChild(button);
     button.innerHTML = "Ver más...";
 
     button.addEventListener("click", function () {
       document.getElementById("contenedorGif").innerHTML = "";
+
+      document.getElementById("textInput").placeholder =
+        textoBusqueda.replace("#", "") + "{resultados}";
+
       const apiKey = "cMm1tYzqFl0jlQ83RRs4q4MMVlT9kMDx";
       const search = textoBusqueda.replace("#", "");
       const endpoint = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${search}&limit=12&rating=G&lang=en`;
-
-      console.log("----->");
 
       fetch(endpoint)
         .then(function (response) {
@@ -76,5 +80,3 @@ fetch(
   .catch(function (error) {
     return error;
   });
-
-// BOTON "VER MAS"
