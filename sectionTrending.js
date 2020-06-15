@@ -1,10 +1,37 @@
 function modificarData(data) {
   data.data.map(function (e) {
+    const div = document.createElement("DIV");
+    div.setAttribute("class", "gifContainerTrending");
+    div.setAttribute("id", "gifContainer");
+    document.getElementById("tendencias-gifs-container").appendChild(div);
+
     const gif = e.images.downsized.url;
     const img = document.createElement("IMG");
     img.setAttribute("src", gif);
-    img.setAttribute("class", "gif-img");
-    document.getElementById("tendencias-gifs-container").appendChild(img);
+    img.setAttribute("class", "gifImgTrending");
+    div.appendChild(img);
+
+    const span = document.createElement("SPAN");
+    span.setAttribute("class", "titleContainerTrending");
+    span.innerHTML = "blabla";
+    div.appendChild(span);
+
+    const gifSlug = e.slug;
+    const res = gifSlug.split("-", 3);
+    span.innerHTML = `#${res[0]} ` + `#${res[1]} ` + `#${res[2]} `;
+    const textoBusqueda = span.innerHTML;
+    div.appendChild(span);
+
+    div.addEventListener("mouseover", function () {
+      span.style.display = "block";
+      div.setAttribute("class", "gifContainerTrendingHover");
+      img.setAttribute("class", "gifImgTrendingHover");
+    });
+    div.addEventListener("mouseout", function () {
+      span.style.display = "none";
+      div.setAttribute("class", "gifContainerTrending");
+      img.setAttribute("class", "gifImgTrending");
+    });
   });
 }
 
