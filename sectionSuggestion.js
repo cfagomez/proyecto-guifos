@@ -14,6 +14,7 @@ function procesarData(data) {
   data.data.map(function (e) {
     const div = document.createElement("DIV");
     div.setAttribute("class", "gif-container");
+    div.setAttribute("id", "gifContainer");
     document.getElementById("sugerencias-gifs-container").appendChild(div);
 
     const span = document.createElement("SPAN");
@@ -27,6 +28,9 @@ function procesarData(data) {
 
     const closeImg = document.createElement("IMG");
     closeImg.setAttribute("src", "./gifOS_UI/assets/close.svg");
+    //closeImg.addEventListener("click", function () {
+    //document.getElementById("gifContainer").style.display = "none";
+    //});
     span.appendChild(closeImg);
 
     const gif = e.images.downsized.url;
