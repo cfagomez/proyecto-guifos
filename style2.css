@@ -435,20 +435,6 @@ body {
   margin-left: 3px;
 }
 
-/*.gif-title {
-  display: flex;
-  justify-content: space-between;
-  flex-direction: row;
-  background-image: linear-gradient(270deg, #f7c9f3 0%, #4180f6 100%);
-  font-size: 14px;
-  color: #ffffff;
-  letter-spacing: 0;
-  padding-top: 3px;
-  padding-bottom: 3px;
-  padding-left: 3px;
-  margin: 0px;
-}*/
-
 .gif {
   height: 280px;
 }
@@ -498,15 +484,6 @@ body {
   border: 1px dotted #4c2f99;
 }
 
-/*.gif-button p {
-  font-size: 14px;
-  color: #ffffff;
-  letter-spacing: 0;
-  text-align: center;
-  line-height: 18px;
-  margin: 5px 0px;/*
-}
-
 /*=====TENDENCIAS SECTION=====*/
 
 .tendencias-section-container {
@@ -544,6 +521,55 @@ body {
   justify-content: space-between;
   width: 100%;
   margin-top: 20px;
+}
+
+.titleContainerTrending {
+  display: none;
+  position: absolute;
+  z-index: 1;
+
+  margin-top: 232px;
+  margin-right: 3px;
+  margin-bottom: 2px;
+  margin-left: 3px;
+
+  overflow: hidden;
+
+  color: #ffffff;
+  background-image: linear-gradient(270deg, #ee3efe 0%, #2e32fb 100%);
+
+  width: 245px;
+  height: 21px;
+}
+
+.gifContainerTrending {
+  display: flex;
+  flex-direction: column;
+}
+
+.gifContainerTrendingHover {
+  display: flex;
+  flex-direction: column;
+
+  background: #b4b4b4;
+  box-shadow: inset -2px -2px 0 0 #5c5c5c, inset 2px 2px 0 0 #ffffff;
+
+  border: 1px dotted #110038;
+}
+
+.gifImgTrending {
+  width: 245px;
+  height: 250px;
+}
+
+.gifImgTrendingHover {
+  width: 245px;
+  height: 250px;
+
+  margin-top: 3px;
+  margin-bottom: 3px;
+  margin-right: 3px;
+  margin-left: 3px;
 }
 
 /*====MIS GIFOS SECTION=====*/
