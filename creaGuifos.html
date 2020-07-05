@@ -31,7 +31,7 @@
 
     <!--CREAR GIFOS WINDOW-->
 
-    <div id="crearGuifosWindow" class="crearGuifosWindow">
+      <div id="crearGuifosWindow" class="crearGuifosWindow">
         <span class="crearGuifosHeader">Crear Guifos</span>
         <div class="crearGuifosTitleContainer">
           <img src="gifOS_UI/assets/windowImg.png" />
@@ -58,26 +58,35 @@
           <button id="cancelarButton" class="cancelarButton">Cancelar</button>
           <button id="comenzarButton" class="comenzarButton">Comenzar</button>
         </div>
-    </div>
+      </div>
 
-    <!--MIS GIFOS SECTION-->
+      <!--MIS GIFOS SECTION-->
 
     <div id="wrapperMisGifosSection" class="wrapper">
       <div id="MisGuifosTitleContainer" class="MisGuifosTitleContainer">
         <p>Mis Guifos:</p>
       </div>
       <div class="wrapper">
-        <div id="misGifosGifsContainer" class="misGifosGifsContainer"></div>
+        <div id="crearGifosGifsContainer" class="misGifosGifsContainer"></div>
       </div>
     </div>
-      <!-- PRECAPTURA CONTAINER -->
+
+    <!-- PRECAPTURA CONTAINER -->
 
       <div id="precapturaContainer" class="precapturaContainer">
         <div id="precapturaTitleContainer" class="precapturaTitleContainer">
           <span id="precapturaTitle" class="precapturaTitle">Un Chequeo Antes de Empezar</span>
           <img id="closePrecaptura" class="closePrecaptura" src="./gifOS_UI/assets/buttonClose.svg">
         </div>
-        <video id="precaptura" class="precaptura"></video>
+        <div id="precapturaInnerContainer" class="precapturaInnerContainer">
+          <video id="precaptura" class="precaptura"></video>
+          <img id="gifRecorded" class="gifRecorded">
+          <div id="subiendoGifoContainer" class="subiendoGifoContainer">
+            <img src="./gifOS_UI/assets/globe_img.png" alt="globe">
+            <span id="subiedoGifosTitle" class="subiendoGifosTitle">Estamos subiendo tu guifo…</span>
+            <span id="tiempoSubiendoGifos" class="tiempoSubiendoGifos">Tiempo restante: <span class="subiendoGuifosText">38 años</span> algunos minutos</span>
+          </div>
+        </div>
         <div id="footer" class="footer">
           <div id="cronometro" class="cronometro">
             <span class="horas">00</span>
@@ -93,11 +102,17 @@
           <img id="recordingImg" class="recordingImg" src="./gifOS_UI/assets/recording.svg">
           <button id="capturarButton" class="capturarButton">Capturar</button>
           <button id="listoButton" class="listoButton">Listo</button>
-        </div>  
+          <button id="repetirCapturaButton" class="repetirCapturaButton">Repetir Captura</button>
+          <button id="subirGuifoButton" class="subirGuifoButton">Subir Guifo</button>
+          <button id="cancelarSubidaButton" class="cancelarSubidaButton">Cancelar</button>
+        </div> 
       </div>
       
-      <script type="text/javascript" src="crearGuifosSect.js"></script>
-      <!--<script type="text/javascript" src="misGifosSect.js"></script>-->
-      <script type="text/javascript" src="precaptura.js"></script>
+      
+    <script type="text/javascript" src="crearGuifosSect.js"></script>
+      <script type="text/javascript" src="misGifosSect.js"></script>
+    <script type="text/javascript" src="minorFunctions.js"></script>
+    <script type="text/javascript" src="darkTheme.js"></script>
+    <script type="text/javascript" src="precaptura.js"></script>
   </body>
 </html>
