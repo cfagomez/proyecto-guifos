@@ -1,24 +1,41 @@
+function prueba(data) {
+  const gifURL = data.data.images.downsized.url;
+  if (localStorage.getItem("GifsURL")) {
+    const currentGifsURL = JSON.parse(localStorage.getItem("GifsURL"));
+    currentGifsURL.push(gifURL);
+    localStorage.setItem("GifsURL", JSON.stringify(currentGifsURL));
+  } else {
+    localStorage.setItem("GifsURL", JSON.stringify([gifURL]));
+  }
+}
+
 const comenzarButton = document.getElementById("comenzarButton");
 comenzarButton.addEventListener("click", function () {
   const crearGuifosWindow = document.getElementById("crearGuifosWindow");
   crearGuifosWindow.style.display = "none";
 });
+//comenzarButton.addEventListener("click", function () {
+//const contenedorMisGuifos = document.getElementById("contenedorMisGuifos");
+//contenedorMisGuifos.style.display = "none";
+//});
+//comenzarButton.addEventListener("click", function () {
+//const MisGuifosTitleContainer = document.getElementById(
+//"MisGuifosTitleContainer"
+//);
+//MisGuifosTitleContainer.style.display = "none";
+//});
 comenzarButton.addEventListener("click", function () {
-  const contenedorMisGuifos = document.getElementById("contenedorMisGuifos");
-  contenedorMisGuifos.style.display = "none";
-});
-comenzarButton.addEventListener("click", function () {
-  const MisGuifosTitleContainer = document.getElementById(
-    "MisGuifosTitleContainer"
-  );
-  MisGuifosTitleContainer.style.display = "none";
+  document.getElementById("wrapperMisGifosSection").style.display = "none";
 });
 comenzarButton.addEventListener("click", function () {
   const precapturaContainer = document.getElementById("precapturaContainer");
   precapturaContainer.style.display = "flex";
 });
 comenzarButton.addEventListener("click", function () {
-  const constraints = { audio: false, video: { width: 832, height: 434 } };
+  const constraints = {
+    audio: false,
+    video: true,
+  };
   navigator.mediaDevices
     .getUserMedia(constraints)
     .then(function (mediaStream) {
@@ -32,27 +49,132 @@ comenzarButton.addEventListener("click", function () {
           type: "gif",
           frameRate: 1,
           quality: 10,
-          width: 360,
           hidden: 240,
         });
 
         recorder.startRecording();
 
-        listoButton.addEventListener("click", function () {
+        listoButton.addEventListener("click", async function () {
           recorder.stopRecording(function () {
             const blob = recorder.blob;
             const url = URL.createObjectURL(blob);
-            document.getElementById("precaptura").src = url;
+            document.getElementById("gifRecorded").src = url;
+
+            document
+              .getElementById("subirGuifoButton")
+              .addEventListener("click", function () {
+                document.getElementById("gifRecorded").style.display = "none";
+                document.getElementById("closePrecaptura").style.display =
+                  "inline";
+                document.getElementById("cronometro").style.display = "none";
+                document.getElementById("precapturaTitle").innerHTML =
+                  "Subiendo Guifo";
+                document.getElementById("subirGuifoButton").style.display =
+                  "none";
+                document.getElementById("repetirCapturaButton").style.display =
+                  "none";
+                document.getElementById("cancelarSubidaButton").style.display =
+                  "block";
+                document.getElementById("subiendoGifoContainer").style.display =
+                  "flex";
+
+                let form = new FormData();
+                form.append("file", blob, "myGif.gif");
+
+                const apiKey = "6eH8kp3hSurlCHG7I1wPwAg39rnlm9fq";
+                const endpoint = `https://upload.giphy.com/v1/gifs?api_key=${apiKey}&username=cuervoSabbath&source_image_url=${url}&tags=cuervo, crow, raven&source_post_url=http://127.0.0.1:5500/misGifosSect.html`;
+
+                const controller = new AbortController();
+                const signal = controller.signal;
+                document
+                  .getElementById("cancelarSubidaButton")
+                  .addEventListener("click", function () {
+                    controller.abort();
+                    console.log("Download aborted");
+                    window.location.href = "creaGuifos.html";
+                  });
+
+                fetch(endpoint, {
+                  signal,
+                  method: "POST",
+                  body: form,
+                })
+                  .then(function (response) {
+                    return response.json();
+                  })
+                  .then(function (data) {
+                    const myGif = data.data.id;
+                    if (localStorage.getItem("MyGifs")) {
+                      const myCurrentGifs = JSON.parse(
+                        localStorage.getItem("MyGifs")
+                      );
+                      myCurrentGifs.push(myGif);
+                      localStorage.setItem(
+                        "MyGifs",
+                        JSON.stringify(myCurrentGifs)
+                      );
+                    } else {
+                      localStorage.setItem("MyGifs", JSON.stringify([myGif]));
+                    }
+
+                    const id = JSON.parse(localStorage.getItem("MyGifs"));
+                    const length = id.length;
+                    const uploadGif = id[length - 1];
+
+                    const key = "6eH8kp3hSurlCHG7I1wPwAg39rnlm9fq";
+                    const idEndpoint = `https://api.giphy.com/v1/gifs/${uploadGif}?api_key=${key}`;
+
+                    fetch(idEndpoint)
+                      .then(function (response) {
+                        return response.json();
+                      })
+                      .then(function (data) {
+                        prueba(data);
+                        window.location.href = "misGifosSect.html";
+                      })
+                      .catch(function (error) {
+                        return error;
+                      });
+                  })
+                  .catch(function (error) {
+                    return error;
+                  });
+              });
           });
+          document.getElementById("precaptura").style.display = "none";
+          document.getElementById("gifRecorded").style.display = "block";
+          document.getElementById("listoButton").style.display = "none";
+          document.getElementById("subirGuifoButton").style.display = "inline";
+          document.getElementById("repetirCapturaButton").style.display =
+            "inline";
+          document.getElementById("recordingImg").style.display = "none";
+          document.getElementById("closePrecaptura").style.display = "none";
         });
 
         closePrecaptura.addEventListener("click", function () {
-          recorder.stopRecording();
           capturarButton.style.display = "inline";
           listoButton.style.display = "none";
           document.getElementById("cameraImg").style.display = "inline";
           document.getElementById("recordingImg").style.display = "none";
         });
+
+        document
+          .getElementById("repetirCapturaButton")
+          .addEventListener("click", function () {
+            document.getElementById("gifRecorded").style.display = "none";
+            document.getElementById("precaptura").style.display = "block";
+            document.getElementById("subirGuifoButton").style.display = "none";
+            document.getElementById("repetirCapturaButton").style.display =
+              "none";
+            document.getElementById("capturarButton").style.display = "inline";
+            document.getElementById("cameraImg").style.display = "inline";
+            document.getElementById("centesimas").innerHTML = "00";
+            document.getElementById("segundos").innerHTML = "00";
+            document.getElementById("cronometro").style.visibility = "hidden";
+            document.getElementById("precapturaTitle").innerHTML =
+              "Un Chequeo Antes de Empezar";
+            document.getElementById("closePrecaptura").style.display = "inline";
+          });
 
         capturarButton.style.display = "none";
         listoButton.style.display = "inline";
@@ -76,13 +198,16 @@ closePrecaptura.addEventListener("click", function () {
 const capturarButton = document.getElementById("capturarButton");
 
 capturarButton.addEventListener("click", function () {
+  document.getElementById("cronometro").style.visibility = "visible";
+  document.getElementById("precapturaTitle").innerHTML = "Capturando Tu Guifo";
+
   var segundos = 0;
   var centesimas = 0;
 
   var segundosSpan = document.getElementById("segundos");
   var centesimasSpan = document.getElementById("centesimas");
 
-  setInterval(function () {
+  const timer = setInterval(function () {
     if (centesimas === 99) {
       centesimas = 0;
       segundos = segundos + 1;
@@ -98,5 +223,11 @@ capturarButton.addEventListener("click", function () {
     } else {
       centesimasSpan.innerHTML = centesimas;
     }
-  }, 10);
+  }, 1);
+
+  listoButton.addEventListener("click", function () {
+    document.getElementById("precapturaTitle").innerHTML = "Vista Previa";
+
+    clearInterval(timer);
+  });
 });
