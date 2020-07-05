@@ -28,10 +28,11 @@ function procesarData(data) {
 
     const closeImg = document.createElement("IMG");
     closeImg.setAttribute("src", "./gifOS_UI/assets/close.svg");
-    //closeImg.addEventListener("click", function () {
-    //document.getElementById("gifContainer").style.display = "none";
-    //});
     span.appendChild(closeImg);
+    closeImg.addEventListener("click", function () {
+      div.remove();
+      //document.getElementById("gifContainer").style.display = "none";
+    });
 
     const gif = e.images.downsized.url;
     const img = document.createElement("IMG");
@@ -63,6 +64,7 @@ function procesarData(data) {
           return response.json();
         })
         .then(function (data) {
+          console.log(data);
           processDataSuggestion(data);
         })
         .catch(function (error) {
