@@ -1,4 +1,4 @@
-function procesarDatos(datos) {
+/*function procesarDatos(datos) {
   datos.data.map(function (e) {
     const gif = e.images.downsized.url;
     const img = document.createElement("IMG");
@@ -21,7 +21,7 @@ fetch(
   })
   .catch(function (error) {
     return error;
-  });
+  });*/
 
 const backArrow = document.getElementById("backArrow");
 backArrow.addEventListener("click", function () {
@@ -34,7 +34,13 @@ cancelarButton.addEventListener("click", function () {
 });
 
 document
-  .getElementById("comenzarButton")
+  .getElementById("crearGuifosButton")
   .addEventListener("click", function () {
-    document.getElementById("wrapperMisGifosSection").style.display = "none";
+    document.getElementById("backArrow").style.display = "inline";
   });
+
+//document
+//.getElementById("comenzarButton")
+//.addEventListener("click", function () {
+//document.getElementById("wrapperMisGifosSection").style.display = "none";
+//});
