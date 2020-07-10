@@ -1,4 +1,4 @@
-function prueba(data) {
+function saveGifInLocalStorage(data) {
   const gifURL = data.data.images.downsized.url;
   if (localStorage.getItem("GifsURL")) {
     const currentGifsURL = JSON.parse(localStorage.getItem("GifsURL"));
@@ -9,21 +9,42 @@ function prueba(data) {
   }
 }
 
+function previewGif(data) {
+  const gifPreviewUrl = data.data.images.downsized.url;
+
+  const gifPreview = document.createElement("IMG");
+  gifPreview.setAttribute("src", gifPreviewUrl);
+  gifPreview.setAttribute("width", "100%");
+  gifPreview.setAttribute("height", "190px");
+  gifPreview.setAttribute("class", "gifImg");
+  gifPreview.setAttribute("id", "gifImg");
+
+  document.getElementById("guifoSubidoVistaPrevia").appendChild(gifPreview);
+}
+
+function putGifInMisGuifos() {
+  if (localStorage.getItem("GifsURL")) {
+    const gifsURL = JSON.parse(localStorage.getItem("GifsURL"));
+    gifsURL.map(function (e) {
+      const currentGif = e;
+      const gifImg = document.createElement("IMG");
+
+      gifImg.setAttribute("src", currentGif);
+      gifImg.setAttribute("width", "100%");
+      gifImg.setAttribute("height", "250px");
+      gifImg.setAttribute("class", "gifImg");
+      gifImg.setAttribute("id", "gifImg");
+
+      document.getElementById("crearGifosGifsContainer").appendChild(gifImg);
+    });
+  }
+}
+
 const comenzarButton = document.getElementById("comenzarButton");
 comenzarButton.addEventListener("click", function () {
   const crearGuifosWindow = document.getElementById("crearGuifosWindow");
   crearGuifosWindow.style.display = "none";
 });
-//comenzarButton.addEventListener("click", function () {
-//const contenedorMisGuifos = document.getElementById("contenedorMisGuifos");
-//contenedorMisGuifos.style.display = "none";
-//});
-//comenzarButton.addEventListener("click", function () {
-//const MisGuifosTitleContainer = document.getElementById(
-//"MisGuifosTitleContainer"
-//);
-//MisGuifosTitleContainer.style.display = "none";
-//});
 comenzarButton.addEventListener("click", function () {
   document.getElementById("wrapperMisGifosSection").style.display = "none";
 });
@@ -129,8 +150,22 @@ comenzarButton.addEventListener("click", function () {
                         return response.json();
                       })
                       .then(function (data) {
-                        prueba(data);
-                        window.location.href = "misGifosSect.html";
+                        document.getElementById(
+                          "guifoSubidoContainer"
+                        ).style.display = "flex";
+                        document.getElementById(
+                          "precapturaContainer"
+                        ).style.display = "none";
+                        document.getElementById(
+                          "wrapperMisGifosSection"
+                        ).style.display = "block";
+                        document.getElementById(
+                          "crearGifosGifsContainer"
+                        ).innerHTML = "";
+                        saveGifInLocalStorage(data);
+                        previewGif(data);
+                        putGifInMisGuifos();
+                        //window.location.href = "misGifosSect.html";
                       })
                       .catch(function (error) {
                         return error;
@@ -231,3 +266,10 @@ capturarButton.addEventListener("click", function () {
     clearInterval(timer);
   });
 });
+
+/*document
+  .getElementById("guifoSubidoListoButton")
+  .addEventListener("click", function () {
+    document.getElementById("guifosubidoContainer").style.display = "none";
+    window.location.href = "misGifosSect.js";
+  });*/
