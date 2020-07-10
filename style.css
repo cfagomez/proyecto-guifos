@@ -445,6 +445,141 @@ body {
   line-height: 18px;
 }
 
+.guifosubidoContainer {
+  display: none;
+  flex-direction: column;
+
+  width: 800px;
+  margin-top: 85px;
+  margin-left: auto;
+  margin-right: auto;
+
+  background: #e6e6e6;
+  box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
+}
+
+.guifoSubidoTitleContainer {
+  display: flex;
+  justify-content: space-between;
+
+  background-image: linear-gradient(270deg, #f7c9f3 0%, #4180f6 100%);
+
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-left: 5px;
+  margin-top: 3px;
+  margin-left: 3px;
+  margin-right: 3px;
+}
+
+.guifoSubidoText {
+  font-size: 14px;
+  color: #ffffff;
+  letter-spacing: 0;
+}
+
+.closeGuifoSubido {
+  margin-right: 5px;
+}
+
+.guifoSubidoVistaPreviaYOpciones {
+  display: flex;
+  flex-direction: row;
+}
+
+.guifoSubidoOpciones {
+  display: flex;
+  flex-direction: column;
+
+  margin-left: 25px;
+}
+
+.guifoSubidoTitle {
+  margin-top: 50px;
+  margin-bottom: 15px;
+
+  font-size: 16px;
+  color: #110038;
+  letter-spacing: 0;
+  line-height: 22px;
+  font-weight: bold;
+}
+
+.copiarEnlaceGuifo {
+  font-size: 16px;
+  color: #110038;
+  letter-spacing: 0;
+  text-align: center;
+  line-height: 18px;
+
+  background: #fff4fd;
+  border: 1px solid #110038;
+  box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
+
+  width: 250px;
+  padding: 10px 50px;
+  margin-bottom: 15px;
+}
+
+.descargarGuifo {
+  font-size: 16px;
+  color: #110038;
+  letter-spacing: 0;
+  text-align: center;
+  line-height: 18px;
+
+  background: #fff4fd;
+  border: 1px solid #110038;
+  box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
+
+  width: 250px;
+  padding: 10px 50px;
+}
+
+.guifoSubidoVistaPrevia {
+  margin-left: 25px;
+  margin-top: 30px;
+  margin-bottom: 65px;
+
+  background: #ffffff;
+  border: 1px solid #979797;
+  box-shadow: inset -2px -2px 0 0 #e6e6e6, inset 2px 2px 0 0 #000000;
+
+  width: 375px;
+}
+
+.gifImg {
+  display: block;
+
+  padding-right: 3px;
+  padding-left: 3px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+
+  width: 100%;
+}
+
+.guifoSubidoFooter {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.guifoSubidoListoButton {
+  background: #f7c9f3;
+  border: 1px solid #110038;
+  box-shadow: inset -1px -1px 0 0 #993a3a, inset 1px 1px 0 0 #ffffff;
+
+  font-size: 16px;
+  color: #110038;
+  letter-spacing: 0;
+  text-align: center;
+  line-height: 18px;
+
+  margin-right: 45px;
+  margin-bottom: 45px;
+  padding: 10px 62px;
+}
+
 .MisGuifosTitleContainer {
   font-size: 14px;
   color: #110038;
