@@ -1,27 +1,18 @@
-/*function procesarDatos(datos) {
-  datos.data.map(function (e) {
-    const gif = e.images.downsized.url;
-    const img = document.createElement("IMG");
-    img.setAttribute("src", gif);
-    img.setAttribute("width", "100%");
-    img.setAttribute("height", "250px");
-    document.getElementById("misGifosGifsContainer").appendChild(img);
+if (localStorage.getItem("GifsURL")) {
+  const gifsURL = JSON.parse(localStorage.getItem("GifsURL"));
+  gifsURL.map(function (e) {
+    const currentGif = e;
+    const gifImg = document.createElement("IMG");
+
+    gifImg.setAttribute("src", currentGif);
+    gifImg.setAttribute("width", "100%");
+    gifImg.setAttribute("height", "250px");
+    gifImg.setAttribute("class", "gifImg");
+    gifImg.setAttribute("id", "gifImg");
+
+    document.getElementById("crearGifosGifsContainer").appendChild(gifImg);
   });
 }
-
-fetch(
-  "https://api.giphy.com/v1/gifs/search?api_key=cMm1tYzqFl0jlQ83RRs4q4MMVlT9kMDx&q=80s horror movies&limit=8&offset=0&rating=R&lang="
-)
-  .then(function (response) {
-    return response.json();
-  })
-  .then(function (datos) {
-    console.log(datos);
-    procesarDatos(datos);
-  })
-  .catch(function (error) {
-    return error;
-  });*/
 
 const backArrow = document.getElementById("backArrow");
 backArrow.addEventListener("click", function () {
@@ -32,15 +23,3 @@ const cancelarButton = document.getElementById("cancelarButton");
 cancelarButton.addEventListener("click", function () {
   document.getElementById("crearGuifosWindow").style.display = "none";
 });
-
-document
-  .getElementById("crearGuifosButton")
-  .addEventListener("click", function () {
-    document.getElementById("backArrow").style.display = "inline";
-  });
-
-//document
-//.getElementById("comenzarButton")
-//.addEventListener("click", function () {
-//document.getElementById("wrapperMisGifosSection").style.display = "none";
-//});
