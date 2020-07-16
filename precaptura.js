@@ -1,4 +1,5 @@
 function saveGifInLocalStorage(data) {
+  console.log(data);
   const gifURL = data.data.images.downsized.url;
   if (localStorage.getItem("GifsURL")) {
     const currentGifsURL = JSON.parse(localStorage.getItem("GifsURL"));
@@ -165,7 +166,23 @@ comenzarButton.addEventListener("click", function () {
                         saveGifInLocalStorage(data);
                         previewGif(data);
                         putGifInMisGuifos();
-                        //window.location.href = "misGifosSect.html";
+                        document
+                          .getElementById("copiarEnlaceGuifo")
+                          .addEventListener("click", function () {
+                            const copyText = document.createElement("input");
+                            copyText.value = document.getElementById(
+                              "gifImg"
+                            ).src;
+                            document.body.appendChild(copyText);
+                            copyText.select();
+                            document.execCommand("copy");
+                          });
+                        //document.getElementById(
+                        //"descargarGuifo"
+                        //).href = document.getElementById("gifImg").src;
+                        //document
+                        //.getElementById("descargarGuifo")
+                        //.setAttribute("download", "myGif.png");
                       })
                       .catch(function (error) {
                         return error;
@@ -196,7 +213,13 @@ comenzarButton.addEventListener("click", function () {
         document
           .getElementById("repetirCapturaButton")
           .addEventListener("click", function () {
-            document.getElementById("gifRecorded").style.display = "none";
+            document.getElementById("gifRecorded").src = "";
+            //const newGifRecorded = document.createElement("IMG");
+            //newGifRecorded.setAttribute("id", "gifRecorded");
+            //newGifRecorded.setAttribute("class", "gifRecorded");
+            //document
+            //.getElementById("precapturaInnerContainer")
+            //.appendChild(newGifRecorded);
             document.getElementById("precaptura").style.display = "block";
             document.getElementById("subirGuifoButton").style.display = "none";
             document.getElementById("repetirCapturaButton").style.display =
