@@ -3,6 +3,7 @@ let timer;
 let blob;
 let url;
 let signal;
+let controller;
 
 function saveGifInLocalStorage(data) {
   const gifURL = data.data.images.downsized.url;
@@ -26,6 +27,10 @@ function previewGif(data) {
   gifPreview.setAttribute("id", "gifImg");
 
   document.getElementById("guifoSubidoVistaPrevia").appendChild(gifPreview);
+
+  const downloadUrl = document.getElementById("gifImg").src;
+
+  document.getElementById("descargarGuifo").setAttribute("href", downloadUrl);
 }
 
 function putGifInMisGuifos() {
@@ -44,6 +49,14 @@ function putGifInMisGuifos() {
       document.getElementById("crearGifosGifsContainer").appendChild(gifImg);
     });
   }
+}
+
+function onStartedDownload(id) {
+  console.log(`Started downloading: ${id}`);
+}
+
+function onFailed(error) {
+  console.log(`Download failed: ${error}`);
 }
 
 const comenzarButton = document.getElementById("comenzarButton");
@@ -216,6 +229,16 @@ document
       });
   });
 
+  document
+  .getElementById("cancelarSubidaButton")
+  .addEventListener("click", function () {
+    controller = new AbortController();
+    signal = controller.signal;
+    controller.abort();
+    console.log("Download aborted");
+    window.location.href = "creaGuifos.html";
+  });
+
 document
   .getElementById("repetirCapturaButton")
   .addEventListener("click", function () {
@@ -242,3 +265,13 @@ document
     copyText.select();
     document.execCommand("copy");
   });
+
+document.getElementById("closeGuifoSubido").addEventListener("click", function (){
+  document.getElementById("guifoSubidoContainer").style.display="none";
+})
+
+document.getElementById("guifoSubidoListoButton").addEventListener("click", function (){
+  document.getElementById("guifoSubidoContainer").style.display="none";
+})
+
+
