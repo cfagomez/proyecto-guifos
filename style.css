@@ -270,6 +270,10 @@ body {
   display: none;
 }
 
+.lupaBuscadorClaro {
+  display: none;
+}
+
 .buscador-button img {
   padding-left: 10px;
   width: 28px;
