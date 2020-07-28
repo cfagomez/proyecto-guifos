@@ -269,6 +269,10 @@ body {
   margin-left: 5px;
 }
 
+.lupaBuscadorOscuro {
+  display: none;
+}
+
 .lupaBuscadorClaro {
   display: none;
 }
