@@ -39,21 +39,18 @@
         <div id="itemsContainer" class="items-container">
           <ul class="navbar-items">
             <li class="items">
-              <a href="creaGuifos.html">Crear Guifos</a>
+              <a href="crearGuifos.html">Crear Guifos</a>
             </li>
-            <div class="dropdown-container">
+            <li class="dropdown-container">
               <span id="elegirTemaItem" class="items"><a>Elegir tema</a></span>
               <img
                 id="arrow"
-                ;
                 src="./gifOS_UI/assets/dropdown.svg"
-                ;
                 alt="dropdown-arrow"
-                ;
               />
-            </div>
+            </li>
             <li class="misGuifos-item">
-              <a id="misGuifosButton" href="misGifosSect.html">Mis Guifos</a>
+              <a id="misGuifosButton" href="misGifos.html">Mis Guifos</a>
             </li>
           </ul>
         </div>
@@ -99,12 +96,6 @@
               src="./gifOS_UI/assets/lupa.svg"
               alt="buscar"
             />
-            <!--<img
-              class="lupaBuscadorClaro"
-              id="lupaBuscador"
-              src="./gifOS_UI/assets/lupa_light.svg"
-              alt="buscar"
-            />-->
             <span class="texto-boton-buscador" id="texto-boton-buscador"
               >Buscar</span
             >
@@ -137,7 +128,7 @@
     <!--SUGERENCIAS-->
 
     <div class="wrapper">
-      <section id="sugerenciasContainer" class="sugerencias-container">
+      <div id="sugerenciasContainer" class="sugerencias-container">
         <div class="sugerencias-text-container">
           <p>Hoy te sugerimos:</p>
         </div>
@@ -145,16 +136,13 @@
           id="sugerencias-gifs-container"
           class="sugerencias-gifs-container"
         ></div>
-      </section>
+      </div>
     </div>
 
     <!--TENDENCIAS-->
 
     <div class="wrapper">
-      <section
-        id="tendenciasSectionContainer"
-        class="tendencias-section-container"
-      >
+      <div id="tendenciasSectionContainer" class="tendencias-section-container">
         <div class="tendencias-title-container">
           <p>Tendencias:</p>
         </div>
@@ -162,13 +150,10 @@
           id="tendencias-gifs-container"
           class="tendencias-gifs-container"
         ></div>
-      </section>
+      </div>
     </div>
-    <script type="text/javascript" src="index2.js"></script>
-    <script type="text/javascript" src="sectionSuggestion.js"></script>
-    <script type="text/javascript" src="sectionTrending.js"></script>
-    <script type="text/javascript" src="minorFunctions.js"></script>
-    <script type="text/javascript" src="darkTheme.js"></script>
-    <script type="text/javascript" src="crearGuifosSect.js"></script>
+    <script src="index.js"></script>
+    <script src="sectionSuggestion.js"></script>
+    <script src="sectionTrending.js"></script>
   </body>
 </html>
