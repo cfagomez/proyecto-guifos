@@ -31,7 +31,6 @@ function procesarData(data) {
     span.appendChild(closeImg);
     closeImg.addEventListener("click", function () {
       div.remove();
-      //document.getElementById("gifContainer").style.display = "none";
     });
 
     const gif = e.images.downsized.url;
