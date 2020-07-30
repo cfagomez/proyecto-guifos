@@ -870,10 +870,6 @@ body {
   justify-content: space-between;
 
   background-image: linear-gradient(270deg, #f7c9f3 0%, #4180f6 100%);
-
-  /*margin-right: 3px;
-  margin-top: 3px;
-  margin-left: 3px;*/
 }
 
 .precapturaTitle {
@@ -1132,4 +1128,20 @@ body {
   grid-row-gap: 20px;
   grid-template-columns: auto auto auto auto;
   justify-content: space-between;
+}
+
+.occult-items-dropdownMisGifos {
+  position: absolute;
+  display: none;
+
+  background: #e6e6e6;
+  box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
+
+  transform: translateY(-15px);
+
+  margin-top: 0px;
+  margin-left: 993px;
+  padding: 11.5px;
+
+  z-index: 1;
 }
