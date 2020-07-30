@@ -608,3 +608,19 @@ body {
   grid-template-columns: auto auto auto auto;
   justify-content: space-between;
 }
+
+.occult-items-dropdownMisGifos {
+  position: absolute;
+  display: none;
+
+  background: #e6e6e6;
+  box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
+
+  transform: translateY(-15px);
+
+  margin-top: 0px;
+  margin-left: 996px;
+  padding: 9px;
+
+  z-index: 1;
+}
