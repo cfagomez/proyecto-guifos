@@ -13,7 +13,6 @@ function modificarData(data) {
 
     const span = document.createElement("SPAN");
     span.setAttribute("class", "titleContainerTrending");
-    span.innerHTML = "blabla";
     div.appendChild(span);
 
     const gifSlug = e.slug;
@@ -36,7 +35,7 @@ function modificarData(data) {
 }
 
 fetch(
-  "https://api.giphy.com/v1/gifs/trending?api_key=cMm1tYzqFl0jlQ83RRs4q4MMVlT9kMDx&limit=12&rating=G"
+  `https://api.giphy.com/v1/gifs/search?api_key=cMm1tYzqFl0jlQ83RRs4q4MMVlT9kMDx&q=random&limit=12&rating=G&lang=en`
 )
   .then(function (response) {
     return response.json();
